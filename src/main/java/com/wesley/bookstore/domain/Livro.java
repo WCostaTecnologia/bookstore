@@ -1,6 +1,5 @@
 package com.wesley.bookstore.domain;
 
-import
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,8 +18,11 @@ public class Livro implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String titulo;
+
     private String nome;
+
     private String text;
 
     @ManyToOne
