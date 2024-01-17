@@ -21,11 +21,10 @@ public class CategoriaService {
         return obj.orElseThrow(() -> new ObjectNotFoundExceptions(
                 "Objeto não encontrado id: " + id + " tipo: " + Categoria.class.getName()));
     }
-
     public List<Categoria> findAll(){
+
         return repository.findAll();
     }
-
     public Categoria create(Categoria obj){
         obj.setId(null);
         return repository.save(obj);
@@ -35,5 +34,9 @@ public class CategoriaService {
         obj.setNome(objDto.getNome());
         obj.setDescricao(objDto.getDescricao());
         return repository.save(obj);
+    }
+    public void delete(Integer id) {
+        findById(id);
+        repository.deleteById(id);
     }
 }
