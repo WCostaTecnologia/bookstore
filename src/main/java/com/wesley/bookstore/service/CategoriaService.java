@@ -20,7 +20,7 @@ public class CategoriaService {
     public Categoria findById(Integer id) {
         Optional<Categoria> obj = repository.findById(id);
         return obj.orElseThrow(() -> new ObjectNotFoundExceptions(
-                "Objeto não encontrado id: " + id + " tipo: " + Categoria.class.getName()));
+                "Objeto não encontrada id: " + id + " , tipo: " + Categoria.class.getName()));
     }
     public List<Categoria> findAll(){
 

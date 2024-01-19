@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class DbService {
@@ -21,13 +22,12 @@ public class DbService {
 
     public  void instanciaBaseDeDados(){
 
-        Categoria cat1 = new Categoria( null, "Informatica", "Livros de TI", new ArrayList<>());
-        Livro l1 = new Livro(null, "Clean Code", "Robert Martin", "Loren Ipsum", cat1);
-        cat1.getLivros().addAll(Arrays.asList(l1));
+        var cat1 = new Categoria( null, "Informatica", "Livros de TI", new ArrayList<>());
+        var l1 = new Livro(null, "Clean Code", "Robert Martin", "Loren Ipsum", cat1);
+        var l2 = new Livro(null, "View Code ", "Martin Low", "Loren Ipsum 2", null);
+        cat1.getLivros().addAll(List.of(l1));
 
-        this.categoriaRepository.saveAll(Arrays.asList(cat1));
-        this.livroRepository.saveAll(Arrays.asList(l1));
+        this.categoriaRepository.saveAll(List.of(cat1));
+        this.livroRepository.saveAll(List.of(l1,l2));
     }
-
-
 }
