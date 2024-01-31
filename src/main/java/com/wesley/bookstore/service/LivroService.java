@@ -2,11 +2,9 @@ package com.wesley.bookstore.service;
 
 import com.wesley.bookstore.domain.Categoria;
 import com.wesley.bookstore.domain.Livro;
-import com.wesley.bookstore.dtos.LivroDTO;
 import com.wesley.bookstore.repositories.LivroRepository;
 import com.wesley.bookstore.service.exceptions.ObjectNotFoundExceptions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -39,8 +37,8 @@ public class LivroService {
 
     private void updateData(Livro newObj, Livro obj) {
         newObj.setTitulo(obj.getTitulo());
-        newObj.setNome(obj.getNome());
-        newObj.setText(obj.getText());
+        newObj.setNome_autor(obj.getNome_autor());
+        newObj.setTexto(obj.getTexto());
     }
 
     public Livro create(Integer id_cat, Livro obj) {
